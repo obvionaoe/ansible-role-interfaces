@@ -12,7 +12,9 @@ iface lo inet loopback
 # {{ item['comment'] }}
 {%       endif %}
 {%       if item['method']|lower == "static" or item['method']|lower == "manual" %}
+{%         if item['auto'] is defined and item['auto'] %}
 auto {{ item['name'] }}
+{%         endif %}
 iface {{ item['name'] }} inet {{ item['method']|lower }}
 {%         if item['address'] is defined and item['address'] != None %}
   address {{ item['address'] }}
@@ -25,7 +27,9 @@ iface {{ item['name'] }} inet {{ item['method']|lower }}
 {%         endif %}
 {%       endif %}
 {%       if item['method']|lower == "dhcp" %}
+{%         if item['auto'] is defined and item['auto'] %}
 auto {{ item['name'] }}
+{%         endif %}
 iface {{ item['name'] }} inet {{ item['method']|lower }}
 {%       endif %}
 {%       if item['wireless_network'] is defined and item['wireless_network'] %}
@@ -50,7 +54,9 @@ iface {{ item['name'] }} inet {{ item['method']|lower }}
 {%       if item['comment'] is defined and item['comment'] != None %}
 # {{ item['comment'] }}
 {%       endif %}
+{%         if item['auto'] is defined and item['auto'] %}
 auto {{ item['name'] }}
+{%         endif %}
 iface {{ item['name'] }} inet {{ item['method']|lower }}
 {%       if item['method']|lower == 'static' %}
 {%         if item['address'] is defined and item['address'] != None %}
@@ -85,7 +91,9 @@ iface {{ item['name'] }} inet {{ item['method']|lower }}
 # {{ item['comment'] }}
 {%       endif %}
 {%       if item['method']|lower == "static" or item['method']|lower == "manual" %}
+{%         if item['auto'] is defined and item['auto'] %}
 auto {{ item['name'] }}
+{%         endif %}
 iface {{ item['name'] }} inet {{ item['method']|lower }}
 {%         if item['address'] is defined and item['address'] != None %}
   address {{ item['address'] }}
@@ -98,7 +106,9 @@ iface {{ item['name'] }} inet {{ item['method']|lower }}
 {%         endif %}
 {%       endif %}
 {%       if item['method']|lower == "dhcp" %}
+{%         if item['auto'] is defined and item['auto'] %}
 auto {{ item['name'] }}
+{%         endif %}
 iface {{ item['name'] }} inet {{ item['method']|lower }}
 {%       endif %}
 {%       if item['parameters'] is defined and item['parameters'] != None %}
@@ -121,7 +131,9 @@ iface {{ item['name'] }} inet {{ item['method']|lower }}
 # {{ item['comment'] }}
 {%       endif %}
 {%       if item['method']|lower == "static" or item['method']|lower == "manual" %}
+{%         if item['auto'] is defined and item['auto'] %}
 auto {{ item['name'] }}
+{%         endif %}
 iface {{ item['name'] }} inet {{ item['method']|lower }}
 {%         if item['address'] is defined and item['address'] != None %}
   address {{ item['address'] }}
@@ -134,7 +146,9 @@ iface {{ item['name'] }} inet {{ item['method']|lower }}
 {%         endif %}
 {%       endif %}
 {%       if item['method']|lower == "dhcp" %}
+{%         if item['auto'] is defined and item['auto'] %}
 auto {{ item['name'] }}
+{%         endif %}
 iface {{ item['name'] }} inet {{ item['method']|lower }}
 {%       endif %}
 {%       if item['parameters'] is defined and item['parameters'] != None %}
