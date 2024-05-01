@@ -3,6 +3,9 @@
 
 config_interface_template: etc/network/interfaces.j2
 
+# Defines if auto should be configured as defined
+config_auto: false
+
 # Defines if network bonds should be configured as defined
 config_network_bonds: false
 
